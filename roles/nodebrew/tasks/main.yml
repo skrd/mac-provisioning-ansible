@@ -1,0 +1,35 @@
+---
+- name: node.jsがインストール済みかどうかを確認	
+  shell: which node
+  ignore_errors: True
+  changed_when: False
+  register: nodejs_installed
+
+- name: インストール済みのnode.jsのバージョンを確認
+  shell: nodebrew ls
+  ignore_errors: True
+  changed_when: False
+  when: nodejs_installed|success
+  register: nodejs_target_version_exist
+
+- name: node.jsをインストール
+  shell: nodebrew install-binary "{{ nodebrew_nodejs_version }}"
+  when: (nodejs_installed|failed) or (nodejs_target_version_exist|failed)
+
+- name: 使用するnode.jsのバージョンを指定
+  shell: nodebrew use "{{ nodebrew_nodejs_version }}"
+  when: (nodejs_installed|failed) or (nodejs_target_version_exist|failed)
+
+- name: npm update
+  shell: npm update -g npm
+  when: nodebrew_npm_update
+
+# エラーが起こるため保留
+# - name: npmグローバルインストール（sudo） 
+#   npm: name={{ item }} state=latest global=yes
+#   become: yes
+#   with_items: "{{ npm_global_packages_sudo }}"
+
+- name: npmグローバルインストール 
+  npm: name={{ item }} state=latest global=yes
+  with_items: "{{ npm_global_packages_user }}"

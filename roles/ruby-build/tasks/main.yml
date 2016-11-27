@@ -1,0 +1,15 @@
+---
+- name: Installs latest stable version of Ruby
+  shell: rbenv install -s $(rbenv install -l | grep -v - | tail -1)
+  register: result
+  changed_when: '"Installed ruby" in result.stderr'
+
+- name: Switch to latest stable version of Ruby
+  shell: rbenv global $(rbenv install -l | grep -v - | tail -1)
+
+# - name: debug result var
+#   debug: var=result
+
+- gem: name={{ item }} state=latest user_install=no executable=~/.rbenv/shims/gem
+  # notify: rbenv rehash
+  with_items: "{{ rbenv_global_gems }}"

@@ -1,0 +1,72 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no           
+  become: no
+  environment:
+    HOMEBREW_CASK_OPTS: "--appdir=/Applications"
+  roles:
+    - homebrew
+    - homebrew-cask
+    - ruby-build
+    - nodebrew
+  vars:
+    homebrew_taps:
+      - homebrew/binary
+      - homebrew/dupes
+      - caskroom/cask
+    homebrew_packages:
+      - { name: openssl }
+      - { name: openssl, state: linked, install_options: force }
+      - { name: python }
+      - { name: ansible }
+      - { name: git }
+      - { name: nodebrew }
+      - { name: readline }
+      - { name: rbenv }
+      - { name: ruby-build }
+      - { name: imagemagick }
+    # homebrew_cask_repositories:
+    #   - caskroom/versions
+    homebrew_cask_packages:
+      - { name: iterm2 }
+      - { name: firefox }
+      - { name: google-chrome }
+      - { name: java }
+      - { name: skype }
+      - { name: alfred2 }
+      - { name: sublime-text2 }
+      - { name: evernote }
+      - { name: dropbox }
+      - { name: filezilla }
+      - { name: vagrant }
+      - { name: virtualbox }
+      - { name: kindle }
+      - { name: libreoffice }
+    rbenv_global_gems:
+      - compass
+    # npm_global_packages_sudo:
+    #   - grunt-cli
+    npm_global_packages_user:
+      - grunt-cli
+      - bower
+  # tasks:
+  #   - name: homebrew の tap リポジトリを追加
+  #     homebrew_tap: tap={{ item }} state=present
+  #     with_items: "{{ homebrew_taps }}"
+
+  #   - name: homebrew をアップデート
+  #     homebrew: update_homebrew=yes
+
+  #   # brew
+  #   - name: brew パッケージをインストール
+  #     homebrew:
+  #       name: "{{ item.name }}"
+  #       state: "{{ item.state | default('latest') }}"
+  #       install_options: "{{ item.install_options | default('') }}"
+  #     with_items: "{{ homebrew_packages }}"
+
+  #   # cask
+  #   - name: cask パッケージをインストール
+  #     homebrew_cask: name={{ item.name }} state="present"
+  #     with_items: "{{ homebrew_cask_packages }}"
+  #     register: cask_result
