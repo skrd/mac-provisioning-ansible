@@ -48,6 +48,7 @@
     #   - grunt-cli
     npm_global_packages_user:
       - grunt-cli
+      - gulp-cli
       - bower
   # tasks:
   #   - name: homebrew の tap リポジトリを追加
