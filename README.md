@@ -6,7 +6,6 @@ Ansibleを使用してMac用開発環境設定をできるだけ自動化する�
 
 1. Xcodeのインストール
 1. .bash_profileを触る
-1. nodebrewのインストール用にユーザーホームディレクトリ直下に「.nodebrew」その中に「src」ディレクトリを作成
 1. Homebrewのインストール
 1. Ansibleのインストール(brew)
 1. Playbookを用意
@@ -23,7 +22,7 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 eval "$(rbenv init -)"
 
 ## 実行環境
-(macOS Sierra / ver10.12.1
+macOS Sierra / ver10.12.1
 
 ## Ansibleのバージョン
 ver2.2.0.0

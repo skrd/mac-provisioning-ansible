@@ -1,4 +1,18 @@
 ---
+
+- name: nodebrewインストール用ディレクトリの存在チェック
+  stat:
+    path: "{{ home_dir }}/{{ nodebrew_dir }}"
+  register: nb_directory_created
+
+- name: nodebrewインストール用ディレクトリ作成
+  file: 
+    path: "{{ home_dir }}/{{ item.name }}"
+    state: directory
+    mode: 0755
+  when: not nb_directory_created.stat.exists
+  with_items: "{{ nodebrew_dir }}"
+
 - name: node.jsがインストール済みかどうかを確認	
   shell: which node
   ignore_errors: True

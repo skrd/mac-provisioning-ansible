@@ -10,6 +10,10 @@
     - ruby-build
     - nodebrew
   vars:
+    home_dir: "{{ lookup('env', 'HOME') }}"
+    nodebrew_dir:
+      - { name: '.nodebrew' }
+      - { name: '.nodebrew/src' }
     homebrew_taps:
       - homebrew/binary
       - homebrew/dupes
