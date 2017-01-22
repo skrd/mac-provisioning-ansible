@@ -17,6 +17,7 @@
     homebrew_taps:
       - homebrew/binary
       - homebrew/dupes
+      - homebrew/versions
       - caskroom/cask
     homebrew_packages:
       - { name: openssl }
