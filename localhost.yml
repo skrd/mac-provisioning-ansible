@@ -47,6 +47,7 @@
       - { name: virtualbox }
       - { name: kindle }
       - { name: libreoffice }
+      - { name: mamp }
     rbenv_global_gems:
       - compass
     # npm_global_packages_sudo:
