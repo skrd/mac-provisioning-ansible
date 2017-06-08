@@ -30,6 +30,7 @@
       - { name: rbenv }
       - { name: ruby-build }
       - { name: imagemagick }
+      - { name: optipng }
     # homebrew_cask_repositories:
     #   - caskroom/versions
     homebrew_cask_packages:
