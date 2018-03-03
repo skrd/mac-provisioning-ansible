@@ -25,4 +25,4 @@ eval "$(rbenv init -)"
 macOS Sierra / ver10.12.1
 
 ## Ansibleのバージョン
-ver2.2.0.0
+ver2.4.3.0
