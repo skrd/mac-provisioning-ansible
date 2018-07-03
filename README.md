@@ -22,7 +22,7 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 eval "$(rbenv init -)"
 
 ## 実行環境
-macOS Sierra / ver10.12.1
+macOS Sierra / ver10.12.6
 
 ## Ansibleのバージョン
-ver2.4.3.0
+ver2.6.0
