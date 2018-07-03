@@ -20,7 +20,7 @@
       # - caskroom/cask
       # - caskroom/versions
       - homebrew/cask
-      - homebrew/versions
+      - homebrew/cask-versions
     homebrew_packages:
       - { name: openssl }
       - { name: openssl, state: linked, install_options: force }
