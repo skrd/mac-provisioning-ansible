@@ -56,7 +56,7 @@
     # npm_global_packages_sudo:
     #   - grunt-cli
     npm_global_packages_user:
-      - grunt-cli
+      # - grunt-cli
       - gulp-cli
       - bower
   # tasks:
