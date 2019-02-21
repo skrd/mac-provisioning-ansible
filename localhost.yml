@@ -15,8 +15,8 @@
       - { name: '.nodebrew' }
       - { name: '.nodebrew/src' }
     homebrew_taps:
-      - homebrew/binary
-      - homebrew/dupes
+      # - homebrew/binary
+      # - homebrew/dupes
       # - caskroom/cask
       # - caskroom/versions
       - homebrew/cask
