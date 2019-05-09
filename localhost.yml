@@ -5,6 +5,7 @@
   environment:
     HOMEBREW_CASK_OPTS: "--appdir=/Applications"
   roles:
+    - fonts
     - homebrew
     - homebrew-cask
     - ruby-build
