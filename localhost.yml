@@ -43,7 +43,8 @@
       - { name: java }
       - { name: skype }
       - { name: alfred2 }
-      - { name: sublime-text2 }
+      # - { name: sublime-text2 }
+      - { name: sublime-text }
       - { name: evernote }
       - { name: dropbox }
       - { name: filezilla }
