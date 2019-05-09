@@ -33,6 +33,7 @@
       - { name: ruby-build }
       - { name: imagemagick }
       - { name: optipng }
+      - { name: wp-cli }
     # homebrew_cask_repositories:
     #   - caskroom/versions
     homebrew_cask_packages:
