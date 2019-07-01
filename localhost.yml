@@ -35,6 +35,7 @@
       - { name: imagemagick }
       - { name: optipng }
       - { name: wp-cli }
+      - { name: composer }
     # homebrew_cask_repositories:
     #   - caskroom/versions
     homebrew_cask_packages:

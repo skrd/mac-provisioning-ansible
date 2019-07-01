@@ -1,4 +1,4 @@
 ---
 
-nodebrew_nodejs_version: v7.1.0
+nodebrew_nodejs_version: v12.3.1
 nodebrew_npm_update: False
