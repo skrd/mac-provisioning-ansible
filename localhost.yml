@@ -57,6 +57,7 @@
       - { name: libreoffice }
       - { name: mamp }
       - { name: visual-studio-code }
+      - { name: handbrake }
     rbenv_global_gems:
       - compass
     # npm_global_packages_sudo:
