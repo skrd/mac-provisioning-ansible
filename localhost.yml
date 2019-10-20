@@ -37,6 +37,7 @@
       - { name: wp-cli }
       - { name: composer }
       - { name: ffmpeg }
+      - { name: jq }
     # homebrew_cask_repositories:
     #   - caskroom/versions
     homebrew_cask_packages:
