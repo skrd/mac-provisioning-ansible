@@ -46,7 +46,8 @@
       - { name: google-chrome }
       - { name: java }
       - { name: skype }
-      - { name: alfred2 }
+      # - { name: alfred2 }
+      - { name: alfred }
       # - { name: sublime-text2 }
       - { name: sublime-text }
       - { name: evernote }
