@@ -22,6 +22,7 @@
       # - caskroom/versions
       - homebrew/cask
       - homebrew/cask-versions
+      - homebrew/cask-fonts
     homebrew_packages:
       - { name: openssl }
       - { name: openssl, state: linked, install_options: force }
@@ -60,6 +61,13 @@
       - { name: mamp }
       - { name: visual-studio-code }
       - { name: handbrake }
+      # fonts / https://github.com/Homebrew/homebrew-cask-fonts/tree/master/Casks
+      - { name: font-noto-sans-cjk-jp }
+      - { name: font-noto-serif-cjk-jp }
+      - { name: font-cardo }
+      - { name: font-krona-one }
+      # - { name: font-roboto }
+      # - { name: font-roboto-condensed }
     rbenv_global_gems:
       - compass
     # npm_global_packages_sudo:
