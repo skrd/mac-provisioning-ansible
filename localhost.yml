@@ -66,6 +66,7 @@
       - { name: font-noto-serif-cjk-jp }
       - { name: font-cardo }
       - { name: font-krona-one }
+      - { name: font-overpass }
       # - { name: font-roboto }
       # - { name: font-roboto-condensed }
     rbenv_global_gems:
