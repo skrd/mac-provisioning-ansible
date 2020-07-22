@@ -68,6 +68,7 @@
       - { name: font-cardo }
       - { name: font-krona-one }
       - { name: font-overpass }
+      - { name: font-inter }
       # - { name: font-roboto }
       # - { name: font-roboto-condensed }
     rbenv_global_gems:
