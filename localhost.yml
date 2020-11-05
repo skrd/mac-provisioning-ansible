@@ -62,6 +62,8 @@
       - { name: visual-studio-code }
       - { name: handbrake }
       - { name: blender }
+      - { name: keyboardcleantool }
+      - { name: karabiner-elements }
       # fonts / https://github.com/Homebrew/homebrew-cask-fonts/tree/master/Casks
       - { name: font-noto-sans-cjk-jp }
       - { name: font-noto-serif-cjk-jp }
@@ -69,8 +71,11 @@
       - { name: font-krona-one }
       - { name: font-overpass }
       - { name: font-inter }
+      - { name: font-lobster }
+      - { name: font-barlow }
       # - { name: font-roboto }
       # - { name: font-roboto-condensed }
+      - { name: font-fontawesome }
     rbenv_global_gems:
       - compass
     # npm_global_packages_sudo:
