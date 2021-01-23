@@ -66,6 +66,7 @@
       - { name: karabiner-elements }
       # fonts / https://github.com/Homebrew/homebrew-cask-fonts/tree/master/Casks
       - { name: font-noto-sans-cjk-jp }
+      - { name: font-noto-sans-javanese }
       - { name: font-noto-serif-cjk-jp }
       - { name: font-cardo }
       - { name: font-krona-one }
