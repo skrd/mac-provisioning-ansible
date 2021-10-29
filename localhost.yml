@@ -64,6 +64,7 @@
       - { name: blender }
       - { name: keyboardcleantool }
       - { name: karabiner-elements }
+      - { name: notion }
       # fonts / https://github.com/Homebrew/homebrew-cask-fonts/tree/master/Casks
       - { name: font-noto-sans-cjk-jp }
       - { name: font-noto-sans-javanese }
