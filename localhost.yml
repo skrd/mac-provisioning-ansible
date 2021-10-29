@@ -74,6 +74,7 @@
       - { name: font-inter }
       - { name: font-lobster }
       - { name: font-barlow }
+      # - { name: font-montserrat }
       # - { name: font-roboto }
       # - { name: font-roboto-condensed }
       - { name: font-fontawesome }

@@ -10,6 +10,6 @@
 # - name: debug result var
 #   debug: var=result
 
-- gem: name={{ item }} state=latest user_install=no executable=~/.rbenv/shims/gem
-  # notify: rbenv rehash
-  with_items: "{{ rbenv_global_gems }}"
+# - gem: name={{ item }} state=latest user_install=no executable=~/.rbenv/shims/gem
+#   # notify: rbenv rehash
+#   with_items: "{{ rbenv_global_gems }}"
