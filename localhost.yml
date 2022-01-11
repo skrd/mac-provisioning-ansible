@@ -8,7 +8,7 @@
     - fonts
     - homebrew
     - homebrew-cask
-    - ruby-build
+    # - ruby-build
     - nodebrew
   vars:
     home_dir: "{{ lookup('env', 'HOME') }}"
