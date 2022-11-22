@@ -25,7 +25,7 @@
       - homebrew/cask-fonts
     homebrew_packages:
       - { name: openssl }
-      - { name: openssl, state: linked, install_options: force }
+      # - { name: openssl, state: linked, install_options: force }
       - { name: python }
       - { name: ansible }
       - { name: git }
@@ -70,6 +70,7 @@
       - { name: font-noto-sans-javanese }
       - { name: font-noto-serif-cjk-jp }
       - { name: font-cardo }
+      # - { name: font-cormorant-garamond }
       - { name: font-krona-one }
       - { name: font-overpass }
       - { name: font-inter }
@@ -79,6 +80,7 @@
       # - { name: font-roboto }
       # - { name: font-roboto-condensed }
       - { name: font-fontawesome }
+      # - { name: font-klee-one }
     rbenv_global_gems:
       - compass
     # npm_global_packages_sudo:

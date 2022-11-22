@@ -28,7 +28,7 @@
 
 - name: node.jsをインストール
   shell: nodebrew install-binary stable
-  when: (nodejs_installed is failed) or (nodejs_target_version_exist is failed)
+  when: (nodejs_installed is failed) or (nodejs_target_version_exist is failed) 
 
 - name: 使用するnode.jsのバージョンを指定
   shell: nodebrew use stable
