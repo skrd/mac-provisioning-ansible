@@ -39,6 +39,7 @@
       - { name: composer }
       - { name: ffmpeg }
       - { name: jq }
+      - { name: rename }
     # homebrew_cask_repositories:
     #   - caskroom/versions
     homebrew_cask_packages:
