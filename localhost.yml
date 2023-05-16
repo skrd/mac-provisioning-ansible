@@ -58,7 +58,7 @@
       - { name: vagrant }
       - { name: virtualbox }
       - { name: kindle }
-      - { name: libreoffice }
+      # - { name: libreoffice }
       - { name: mamp }
       - { name: visual-studio-code }
       - { name: handbrake }
