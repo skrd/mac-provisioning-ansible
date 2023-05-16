@@ -46,6 +46,7 @@
       - { name: iterm2 }
       - { name: firefox }
       - { name: google-chrome }
+      - { name: microsoft-edge }
       - { name: java }
       - { name: skype }
       # - { name: alfred2 }
