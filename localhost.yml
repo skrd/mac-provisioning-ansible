@@ -47,7 +47,7 @@
       - { name: firefox }
       - { name: google-chrome }
       - { name: microsoft-edge }
-      - { name: java }
+      # - { name: java }
       - { name: skype }
       # - { name: alfred2 }
       - { name: alfred }
@@ -55,7 +55,7 @@
       - { name: sublime-text }
       - { name: evernote }
       - { name: dropbox }
-      - { name: filezilla }
+      # - { name: filezilla }
       - { name: vagrant }
       - { name: virtualbox }
       - { name: kindle }
