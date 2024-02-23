@@ -40,6 +40,7 @@
       - { name: ffmpeg }
       - { name: jq }
       - { name: rename }
+      - { name: yarn }
     # homebrew_cask_repositories:
     #   - caskroom/versions
     homebrew_cask_packages:
@@ -92,7 +93,6 @@
       # - grunt-cli
       - gulp-cli
       # - bower
-      - yarn
       - npm-check-updates
   # tasks:
   #   - name: homebrew の tap リポジトリを追加
