@@ -1,6 +1,6 @@
 - hosts: localhost
   connection: local
-  gather_facts: no           
+  gather_facts: no
   become: no
   environment:
     HOMEBREW_CASK_OPTS: "--appdir=/Applications"
@@ -13,8 +13,8 @@
   vars:
     home_dir: "{{ lookup('env', 'HOME') }}"
     nodebrew_dir:
-      - { name: '.nodebrew' }
-      - { name: '.nodebrew/src' }
+      - { name: ".nodebrew" }
+      - { name: ".nodebrew/src" }
     homebrew_taps:
       # - homebrew/binary
       # - homebrew/dupes

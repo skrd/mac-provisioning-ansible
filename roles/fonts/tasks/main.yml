@@ -3,8 +3,8 @@
 # Ricty
 - name: xquartz のインストール (for Ricty)
   homebrew_cask: name=xquartz
-- name: fontforge のインストール (for Ricty)
-  homebrew: name=fontforge
+# - name: fontforge のインストール (for Ricty)
+#   homebrew: name=fontforge
 # - name: Ricty のインストール
 #   homebrew: name=ricty
 # - name: 生成されたフォントファイルをコピー
