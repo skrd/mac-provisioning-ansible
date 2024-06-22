@@ -54,7 +54,7 @@
       - { name: alfred }
       # - { name: sublime-text2 }
       - { name: sublime-text }
-      - { name: evernote }
+      # - { name: evernote }
       - { name: dropbox }
       # - { name: filezilla }
       - { name: vagrant }
@@ -70,20 +70,20 @@
       - { name: notion }
       - { name: warp }
       # fonts / https://github.com/Homebrew/homebrew-cask-fonts/tree/master/Casks
-      - { name: font-noto-sans-cjk-jp }
-      - { name: font-noto-sans-javanese }
-      - { name: font-noto-serif-cjk-jp }
-      - { name: font-cardo }
+      # - { name: font-noto-sans-cjk-jp }
+      # - { name: font-noto-sans-javanese }
+      # - { name: font-noto-serif-cjk-jp }
+      # - { name: font-cardo }
       # - { name: font-cormorant-garamond }
-      - { name: font-krona-one }
-      - { name: font-overpass }
-      - { name: font-inter }
-      - { name: font-lobster }
-      - { name: font-barlow }
+      # - { name: font-krona-one }
+      # - { name: font-overpass }
+      # - { name: font-inter }
+      # - { name: font-lobster }
+      # - { name: font-barlow }
       # - { name: font-montserrat }
       # - { name: font-roboto }
       # - { name: font-roboto-condensed }
-      - { name: font-fontawesome }
+      # - { name: font-fontawesome }
       # - { name: font-klee-one }
     rbenv_global_gems:
       - compass
