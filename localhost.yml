@@ -15,14 +15,14 @@
     nodebrew_dir:
       - { name: ".nodebrew" }
       - { name: ".nodebrew/src" }
-    homebrew_taps:
-      # - homebrew/binary
-      # - homebrew/dupes
-      # - caskroom/cask
-      # - caskroom/versions
-      # - homebrew/cask
-      # - homebrew/cask-versions
-      # - homebrew/cask-fonts
+    # homebrew_taps:
+    #   # - homebrew/binary
+    #   # - homebrew/dupes
+    #   # - caskroom/cask
+    #   # - caskroom/versions
+    #   # - homebrew/cask
+    #   # - homebrew/cask-versions
+    #   # - homebrew/cask-fonts
     homebrew_packages:
       - { name: openssl }
       # - { name: openssl, state: linked, install_options: force }
