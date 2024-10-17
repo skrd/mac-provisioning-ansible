@@ -59,7 +59,7 @@
       # - { name: filezilla }
       - { name: vagrant }
       - { name: virtualbox }
-      - { name: kindle }
+      # - { name: kindle }
       # - { name: libreoffice }
       - { name: mamp }
       - { name: visual-studio-code }
