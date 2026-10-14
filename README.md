@@ -2,29 +2,22 @@
 
 Ansibleを使用してMac用開発環境設定をできるだけ自動化するためのファイル。
 
-## 現時点の使い方
+## 事前準備
 
-1. Xcodeのインストール
-1. .bash_profileを触る
-1. Homebrewのインストール
-1. Ansibleのインストール(brew)
-1. Playbookを用意
-1. Playbookのあるディレクトリでmakeを実行
+1. Xcode Command Line Toolsをインストール
+1. Homebrewをインストール
+1. HomebrewからAnsibleをインストール
+1. このリポジトリをクローン
+1. リポジトリのディレクトリで `make` を実行
 
 ## .bash_profileの内容
 
-PATH="/usr/local/sbin:$PATH"  
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"  
-export PATH=$HOME/.nodebrew/current/bin:$PATH  
-export MAMP_PHP=/Applications/MAMP/bin/php/php7.4.2/bin  
-export PATH="$MAMP_PHP:$PATH"  
-export PATH=$PATH:/Applications/MAMP/Library/bin/  
-eval "$(rbenv init -)"  
-alias brew='PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin brew'  
-alias python=python3export
+PATHや使用するPHP、Node.jsなどの設定は各自の環境に合わせて設定。
 
 ## 実行環境
-macOS Monterey / ver12.6.8
+
+macOS Tahoe / Ver.26.6.2
 
 ## Ansibleのバージョン
-ver2.15.4
+
+ver2.21.0

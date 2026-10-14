@@ -5,69 +5,68 @@
   environment:
     HOMEBREW_CASK_OPTS: "--appdir=/Applications"
   roles:
-    - fonts
+    # - fonts
     - homebrew
     - homebrew-cask
     # - ruby-build
     - nodebrew
+    - mas
   vars:
     home_dir: "{{ lookup('env', 'HOME') }}"
     nodebrew_dir:
       - { name: ".nodebrew" }
       - { name: ".nodebrew/src" }
-    # homebrew_taps:
-    #   # - homebrew/binary
-    #   # - homebrew/dupes
-    #   # - caskroom/cask
-    #   # - caskroom/versions
-    #   # - homebrew/cask
-    #   # - homebrew/cask-versions
-    #   # - homebrew/cask-fonts
     homebrew_packages:
-      - { name: openssl }
+      # - { name: openssl }
       # - { name: openssl, state: linked, install_options: force }
-      - { name: python }
+      # - { name: python }
       - { name: ansible }
       - { name: git }
       - { name: nodebrew }
-      - { name: readline }
-      - { name: rbenv }
-      - { name: ruby-build }
-      - { name: imagemagick }
-      - { name: optipng }
+      # - { name: readline }
+      # - { name: rbenv }
+      # - { name: ruby-build }
+      # - { name: imagemagick }
+      # - { name: optipng }
       - { name: wp-cli }
       - { name: composer }
-      - { name: ffmpeg }
-      - { name: jq }
-      - { name: rename }
+      # - { name: ffmpeg }
+      # - { name: jq }
+      # - { name: rename }
+      - { name: mas }
       - { name: yarn }
+      - { name: btop }
     # homebrew_cask_repositories:
     #   - caskroom/versions
+    mas_packages:
+      - { id: 302584613, name: "Kindle" }
+      - { id: 539883307, name: "LINE" }
     homebrew_cask_packages:
       - { name: iterm2 }
       - { name: firefox }
-      - { name: google-chrome }
+      # - { name: google-chrome }
       - { name: microsoft-edge }
       # - { name: java }
-      - { name: skype }
+      # - { name: skype }
       # - { name: alfred2 }
-      - { name: alfred }
+      # - { name: alfred }
       # - { name: sublime-text2 }
-      - { name: sublime-text }
+      # - { name: sublime-text }
       # - { name: evernote }
       - { name: dropbox }
       # - { name: filezilla }
-      - { name: vagrant }
-      - { name: virtualbox }
+      # - { name: vagrant }
+      # - { name: virtualbox }
       # - { name: kindle }
-      # - { name: libreoffice }
-      - { name: mamp }
-      - { name: visual-studio-code }
-      - { name: handbrake }
-      - { name: blender }
-      - { name: keyboardcleantool }
-      - { name: karabiner-elements }
-      - { name: notion }
+      - { name: libreoffice }
+      # - { name: mamp }
+      # - { name: visual-studio-code }
+      # - { name: handbrake }
+      # - { name: blender }
+      # - { name: keyboardcleantool }
+      # - { name: karabiner-elements }
+      # - { name: notion }
+      - { name: obsidian }
       - { name: warp }
       # fonts / https://github.com/Homebrew/homebrew-cask-fonts/tree/master/Casks
       # - { name: font-noto-sans-cjk-jp }
@@ -85,33 +84,12 @@
       # - { name: font-roboto-condensed }
       # - { name: font-fontawesome }
       # - { name: font-klee-one }
-    rbenv_global_gems:
-      - compass
+    # rbenv_global_gems:
+    #   - compass
     # npm_global_packages_sudo:
     #   - grunt-cli
     npm_global_packages_user:
       # - grunt-cli
-      - gulp-cli
+      # - gulp-cli
       # - bower
       - npm-check-updates
-  # tasks:
-  #   - name: homebrew の tap リポジトリを追加
-  #     homebrew_tap: tap={{ item }} state=present
-  #     with_items: "{{ homebrew_taps }}"
-
-  #   - name: homebrew をアップデート
-  #     homebrew: update_homebrew=yes
-
-  #   # brew
-  #   - name: brew パッケージをインストール
-  #     homebrew:
-  #       name: "{{ item.name }}"
-  #       state: "{{ item.state | default('latest') }}"
-  #       install_options: "{{ item.install_options | default('') }}"
-  #     with_items: "{{ homebrew_packages }}"
-
-  #   # cask
-  #   - name: cask パッケージをインストール
-  #     homebrew_cask: name={{ item.name }} state="present"
-  #     with_items: "{{ homebrew_cask_packages }}"
-  #     register: cask_result

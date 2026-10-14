@@ -1,0 +1,7 @@
+---
+- name: Mac App Storeからアプリをインストール
+  community.general.mas:
+    id: "{{ item.id }}"
+    state: present
+  with_items: "{{ mas_packages }}"
+  when: mas_packages is defined and mas_packages | length > 0

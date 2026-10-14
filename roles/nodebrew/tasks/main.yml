@@ -1,49 +1,53 @@
 ---
-
-- name: nodebrewインストール用ディレクトリの存在チェック
-  stat:
-    path: "{{ home_dir }}/{{ nodebrew_dir }}"
-  register: nb_directory_created
-
 - name: nodebrewインストール用ディレクトリ作成
-  file: 
+  ansible.builtin.file:
     path: "{{ home_dir }}/{{ item.name }}"
     state: directory
-    mode: 0755
-  when: not nb_directory_created.stat.exists
+    mode: "0755"
   with_items: "{{ nodebrew_dir }}"
 
-- name: node.jsがインストール済みかどうかを確認	
-  shell: which node
-  ignore_errors: True
-  changed_when: False
+- name: node.jsがインストール済みかどうかを確認
+  ansible.builtin.shell: which node
+  ignore_errors: true
+  changed_when: false
   register: nodejs_installed
+  # Ansibleのshell環境にHomebrewのパスを通す
+  environment:
+    PATH: "/opt/homebrew/bin:/usr/local/bin:{{ ansible_env.PATH }}"
 
 - name: インストール済みのnode.jsのバージョンを確認
-  shell: nodebrew ls
-  ignore_errors: True
-  changed_when: False
+  ansible.builtin.shell: nodebrew ls
+  ignore_errors: true
+  changed_when: false
   when: nodejs_installed is success
   register: nodejs_target_version_exist
+  environment:
+    PATH: "/opt/homebrew/bin:/usr/local/bin:{{ home_dir }}/.nodebrew/current/bin:{{ ansible_env.PATH }}"
 
 - name: node.jsをインストール
-  shell: nodebrew install-binary stable
-  when: (nodejs_installed is failed) or (nodejs_target_version_exist is failed) 
+  ansible.builtin.shell: nodebrew install-binary stable
+  when: (nodejs_installed is failed) or (nodejs_target_version_exist is failed)
+  environment:
+    PATH: "/opt/homebrew/bin:/usr/local/bin:{{ ansible_env.PATH }}"
 
 - name: 使用するnode.jsのバージョンを指定
-  shell: nodebrew use stable
+  ansible.builtin.shell: nodebrew use stable
   when: (nodejs_installed is failed) or (nodejs_target_version_exist is failed)
+  environment:
+    PATH: "/opt/homebrew/bin:/usr/local/bin:{{ ansible_env.PATH }}"
 
 - name: npm update
-  shell: npm update -g npm
-  when: nodebrew_npm_update == True
+  ansible.builtin.shell: npm update -g npm
+  when: nodebrew_npm_update | bool
+  environment:
+    PATH: "/opt/homebrew/bin:/usr/local/bin:{{ home_dir }}/.nodebrew/current/bin:{{ ansible_env.PATH }}"
 
-# エラーが起こるため保留
-# - name: npmグローバルインストール（sudo） 
-#   npm: name={{ item }} state=latest global=yes
-#   become: yes
-#   with_items: "{{ npm_global_packages_sudo }}"
-
-- name: npmグローバルインストール 
-  npm: name={{ item }} state=latest global=yes
+- name: npmグローバルインストール
+  community.general.npm:
+    name: "{{ item.name | default(item) }}"
+    state: latest
+    global: true
   with_items: "{{ npm_global_packages_user }}"
+  when: npm_global_packages_user is defined and npm_global_packages_user | length > 0
+  environment:
+    PATH: "/opt/homebrew/bin:/usr/local/bin:{{ home_dir }}/.nodebrew/current/bin:{{ ansible_env.PATH }}"
